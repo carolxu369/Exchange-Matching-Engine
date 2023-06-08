@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<results>
+        <created id="5" />
+        <created id="6" />
+        <error id="5">Account Already Exists</error>
+        <error id="3">Account Already Exists</error>
+        <created sym="APPL" id="1" />
+        <created sym="APPL" id="1" />
+        <error sym="APPL" id="7">Account Doesn't Exist for Symbol</error>
+        <created sym="META" id="1" />
+        <created sym="META" id="2" />
+        <error sym="META" id="7">Account Doesn't Exist for Symbol</error>
+        <created sym="MSFT" id="1" />
+        <created sym="MSFT" id="2" />
+        <created sym="MSFT" id="3" />
+        <error sym="MSFT" id="7">Account Doesn't Exist for Symbol</error>
+</results>

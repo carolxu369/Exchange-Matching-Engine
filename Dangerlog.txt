@@ -1,0 +1,28 @@
+Danger.log
+
+3.29
+Today we discussed the details of the project and agreed on the table creation format and make a time plan. We are going to build tables: Symbol, Account, Position, Transaction, and Deal. 
+We are going to put all open and canceled orders inside the transaction table and put executed and canceled orders inside the deal tables. We decide not to delete the executed or canceled order in the transaction table, and we are wondering if too many records will slow the search time. 
+We assume that one account can only have one position for one symbol.
+
+3.30
+We start to construct the database Tables and XML Parser. And we establish the connection between the server and the client. 
+In the database, if we add a symbol first or add a position first. If there is no account or position, we may send the response back as an error. We designed in the SQL setting that the balance and shares need to be bigger than 0 and we also check it inside our code. 
+In today’s version, if the balance is less than 0 or the shares are less than 0, it will report a segment fault. Then we change the throwing error to returning 0, and we check the return value outside of the function, then no segment fault anymore. 
+We don’t use ORM to communicate with the database as the server is easily attacked by SQL injection attacks.
+
+4.2
+We write docker and docker-compose files. At first, we cannot run it, then we make the database inside the yml file the same as the database setting inside the init function of the database and make the docker file to install libpqxx-dev postgresql libxerces-c-dev. But it still doesn’t work, so we add make and g++ to the docker file and it finally works. Then, we make the server run successfully inside docker. 
+If the XML file is in the wrong format, we will report an error response in XML format and send that back to the client.
+
+4.4
+We clarify some mistakes in our project, such as some error printing should be at the same level as each request tag. And we add multi-thread and lock to our project. However, we cannot handle too many requests in our project and we didn’t limit our thread number.
+We limit the permissions of the account, which means the users can only query and cancel the orders created by themselves.
+
+4.5
+Today, we want to use parallel to test the scalability; however, there is an error we cannot solve and we asked TA and the question is solved. We notice that in our version of receive and send, we send the number and xml file separately, however, it seemed that we should put them together, and we tried to fix it.
+We doesn’t add the number in response.
+
+4.6 
+Today, we are testing scalability. When run the multi-thread, we sometimes can get the processing time of different threads, sometimes we only get one thread time, which is not stable. You can try multiple times when you want to test for the processing time.
+

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transactions account="1"> <!-- also try account = 7, which not exists -->
+  <order sym="APPL" amount="-2000" limit="100"/> <!-- sell but not enough amount -->
+  <order sym="META" amount="5000" limit="100"/> <!-- buy but not enough balance -->
+  <order sym="MSFT" amount="50" limit="100"/> <!-- success, buy MSFT 50 -->
+  <order sym="MSFT" amount="-50" limit="100"/> <!-- success, sell MSFT 50 -->
+  <order sym="SNOW" amount="5" limit="100"/> <!-- sym not exists -->
+  <order sym="SNOW" amount="-5" limit="100"/> <!-- sym not exists -->
+</transactions>

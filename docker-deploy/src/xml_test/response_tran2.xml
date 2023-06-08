@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<results>
+        <status id="1">
+                <executed shares="-100" price="150" time="1680726262" />
+        </status>
+        <status id="2">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </status>
+        <status id="3">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </status>
+        <status id="4">
+                <error>Error: Transaction ID Doesn't Exist</error>
+        </status>
+        <status id="5">
+                <error>Error: Transaction ID Doesn't Exist</error>
+        </status>
+</results>
+
+testdb=# TABLE transaction;
+ order_id |  status  | symbol_name | account_id | amount | limit_price | update_time 
+----------+----------+-------------+------------+--------+-------------+-------------
+        2 | OPEN     | APPL        |          2 |   -100 |         180 |           0
+        1 | EXECUTED | APPL        |          1 |      0 |         150 |           0
+        3 | EXECUTED | APPL        |          3 |      0 |         200 |           0
+(3 rows)
+
+<?xml version="1.0"?>
+<results>
+        <status id="1">
+                <executed shares="-100" price="150" time="1680726390" />
+        </status>
+        <status id="2">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </status>
+        <status id="3">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </status>
+        <status id="4">
+                <open shares="50" />
+        </status>
+        <status id="5">
+                <open shares="-50" />
+        </status>
+</results>
+
+testdb=# TABLE transaction;
+ order_id |  status  | symbol_name | account_id | amount | limit_price | update_time 
+----------+----------+-------------+------------+--------+-------------+-------------
+        2 | OPEN     | APPL        |          2 |   -100 |         180 |           0
+        1 | EXECUTED | APPL        |          1 |      0 |         150 |           0
+        3 | EXECUTED | APPL        |          3 |      0 |         200 |           0
+        4 | OPEN     | MSFT        |          1 |     50 |         100 |           0
+        5 | OPEN     | MSFT        |          1 |    -50 |         100 |           0
+(5 rows)

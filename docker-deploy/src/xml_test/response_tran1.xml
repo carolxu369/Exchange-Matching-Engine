@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<results>
+        <error sym="APPL" amount="-2000" limit="100">Request Rejected: Insufficient Seller Amount</error>
+        <error sym="META" amount="5000" limit="100">Request Rejected: Insufficient Buyer Balance</error>
+        <opened sym="MSFT" amount="50" limit="100" id="4" />
+        <opened sym="MSFT" amount="-50" limit="100" id="5" />
+        <error sym="SNOW" amount="5" limit="100">Symbol Doesn't Exist</error>
+        <error sym="SNOW" amount="-5" limit="100">Symbol Doesn't Exist</error>
+</results>
+
+<!-- if account = 7
+
+<?xml version="1.0"?>
+<results>
+        <error>Account Doesn't Exist</error>
+</results>
+
+ -->

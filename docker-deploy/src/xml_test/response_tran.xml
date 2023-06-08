@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<results>
+        <error sym="APPL" amount="-2000" limit="100">Request Rejected: Insufficient Seller Amount</error>
+        <error sym="META" amount="5000" limit="100">Request Rejected: Insufficient Buyer Balance</error>
+        <opened sym="MSFT" amount="50" limit="100" id="4" />
+        <opened sym="MSFT" amount="-50" limit="100" id="5" />
+        <error sym="SNOW" amount="5" limit="100">Symbol Doesn't Exist</error>
+        <error sym="SNOW" amount="-5" limit="100">Symbol Doesn't Exist</error>
+        <status id="1">
+                <executed shares="-100" price="150" time="1680727240" />
+        </status>
+        <status id="2">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </status>
+        <status id="3">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </status>
+        <canceled id="1">
+                <executed shares="-100" price="150" time="1680727240" />
+        </canceled>
+        <canceled id="2">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </canceled>
+        <canceled id="3">
+                <error>Error: Transaction ID Doesn't Match With Account ID</error>
+        </canceled>
+        <canceled id="4">
+                <canceled shares="50" time="1680727240" />
+        </canceled>
+</results>
+
+
+
+error message print:
+<?xml version="1.0"?>
+<results>
+        <error sym="APPL" amount="-2000" limit="100">Order Failed: Account Doesn't Exist</error>
+        <error sym="META" amount="5000" limit="100">Order Failed: Account Doesn't Exist</error>
+        <error sym="MSFT" amount="50" limit="100">Order Failed: Account Doesn't Exist</error>
+        <error sym="MSFT" amount="-50" limit="100">Order Failed: Account Doesn't Exist</error>
+        <error sym="SNOW" amount="5" limit="100">Order Failed: Account Doesn't Exist</error>
+        <error sym="SNOW" amount="-5" limit="100">Order Failed: Account Doesn't Exist</error>
+        <error id="1">Query Failed: Account Doesn't Exist</error>
+        <error id="2">Query Failed: Account Doesn't Exist</error>
+        <error id="3">Query Failed: Account Doesn't Exist</error>
+        <error id="1">Cancel Failed: Account Doesn't Exist</error>
+        <error id="2">Cancel Failed: Account Doesn't Exist</error>
+        <error id="3">Cancel Failed: Account Doesn't Exist</error>
+        <error id="4">Cancel Failed: Account Doesn't Exist</error>
+</results>
